@@ -20,5 +20,74 @@ h1 {
 }
 
 .faq-container {
-    
+    width: 600px;
+    border: 1px solid #111;
+    padding: 20px;
+    position: relative;
+    margin: 20px;
+    border-radius: 10px;
+    transition: 0.4s ease;
+}
+
+.faq-text {
+    margin-top: 30px;
+    display: none;
+}
+
+.faq-container.active {
+    background: #fff;
+}
+
+.faq-container.active .faq-text {
+    display: block;
+}
+
+button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    border: 0;
+    background: inherit;
+    transition: 0.4s ease;
+}
+
+
+button:active {
+    outline: none;
+}
+
+button .fa-chevron-down {
+    display: none;
+}
+
+.faq-container.active button .fa-chevron-up {
+    display: none;
+}
+
+.faq-container.active button .fa-chevron-down {
+    display: block;
+    padding: 5px 10px;
+    background: #333;
+    color: #fff;
+    border-radius: 4px;
+}
+
+.faq-container.active::before,
+.faq-container.active::after {
+    content: '\f075';
+    font-family: 'Font Awesome 5 Free';
+    font-size: 5rem;
+    position: absolute;
+    z-index: 0;
+    top: 0;
+    left: 0;
+    color: teal;
+    opacity: 0.3;
+}
+
+.faq-container.active::before {
+    top: 30px;
+    left: 40px;
+    transform: rotateY(180deg);
+    color: tomato;
 }
